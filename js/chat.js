@@ -7,8 +7,6 @@ let shownMessagesLength = 0;
 let loggedInUsername;
 let hiddeNeM = document.getElementById("hiddeNeM");
 let messagesArea = document.getElementById("messagesArea");
-console.log("++++++++++++++++++++");
-console.log(hiddeNeM);
 if (localStorage.getItem("credentials") === null) {
   window.location.href = "login1.html";
 } else {
@@ -27,7 +25,6 @@ if (localStorage.getItem("credentials") === null) {
       dataType: "json",
       async: true,
       success: function(data) {
-        console.log(data);
         for (i = 0; i < data.length; i++) {
           let divChatList = document.createElement("div");
           divChatList.className = "chat_list";
@@ -89,7 +86,6 @@ chatInbox.addEventListener("click", function(e) {
                                 </div>
                             </div>`;
             messagesArea.appendChild(divIncoming);
-            console.log("ekserxomeono");
           }
         }
       },
@@ -137,7 +133,6 @@ setInterval(function() {
                                 </div>
                             </div>`;
               messagesArea.appendChild(divIncoming);
-              console.log("ekserxomeono");
             }
           }
         }

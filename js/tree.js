@@ -117,17 +117,12 @@ tree.addEventListener("click", function(e) {
   if (e.target.classList.contains("eikonidio")) {
     let diakoptis =
       e.target.parentElement.parentElement.parentElement.nextElementSibling;
-    console.log("diakoptis apo katw");
-    console.log(diakoptis);
     // if (diakoptis.style.display == "none") {
     let parentUlList = diakoptis.children[0];
     let parentIdfromLi = e.target.parentElement.parentElement.parentElement.parentElement.getAttribute(
       "parentId"
     );
-    console.log("+++++++++++++");
-    console.log(parentUlList);
-    console.log("paidia");
-    console.log(parentUlList.children.length);
+
     if (parentUlList.children.length == 0) {
       $.ajax({
         type: "POST",
