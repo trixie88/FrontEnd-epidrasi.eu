@@ -1,2 +1,7 @@
 # epidrasiFront
-A tree data-structure application using a Rest Api and mongoDB. In order to register another user must give you his unique ID
+A tree data-structure application ( In order to register another user must give you his unique ID).
+
+Using below rest API using mongoDB
+
+https://github.com/trixie88/BackEnd-epidrasi.eu-RestApi
+
