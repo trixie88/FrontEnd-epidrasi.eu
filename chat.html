@@ -1,74 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./css/messages.css" />
-    <link
-      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-      rel="stylesheet"
-      id="bootstrap-css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  </head>
 
-  <body>
-    <div class="container">
-      <h3 class=" text-center">Messaging</h3>
-      <div class="messaging">
-        <div class="inbox_msg">
-          <div class="inbox_people">
-            <div class="headind_srch">
-              <div class="recent_heading">
-                <h4>Chat</h4>
-              </div>
-              <div class="srch_bar">
-                <div class="stylish-input-group">
-                  <!-- <input type="text" class="search-bar"  placeholder="Search" > -->
-                  <span class="input-group-addon">
-                    <button type="button">
-                      <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                  </span>
-                </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="./css/messages.css" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h3 class=" text-center">Messaging</h3>
+    <div class="messaging">
+      <div class="inbox_msg">
+        <div class="inbox_people">
+          <div class="headind_srch">
+            <div class="recent_heading">
+              <h4>Chat</h4>
+            </div>
+            <div class="srch_bar">
+              <div class="stylish-input-group">
+                <!-- <input type="text" class="search-bar"  placeholder="Search" > -->
+                <span class="input-group-addon">
+                  <button type="button">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </span>
               </div>
             </div>
-            <div id="chatInbox" class="inbox_chat"></div>
           </div>
-          <div class="mesgs">
-            <div id="messagesArea" class="msg_history"></div>
-            <div class="type_msg">
-              <div class="input_msg_write">
-                <input
-                  id="typedMessageArea"
-                  type="text"
-                  class="write_msg"
-                  placeholder="Type a message"
-                />
-                <button id="sendMessageBtn" class="msg_send_btn" type="button">
-                  <i class="fas fa-paper-plane"></i>
-                </button>
-              </div>
+          <div id="chatInbox" class="inbox_chat"></div>
+        </div>
+        <div class="mesgs">
+          <div id="messagesArea" class="msg_history"></div>
+          <div class="type_msg">
+            <div class="input_msg_write">
+              <input id="typedMessageArea" type="text" class="write_msg" placeholder="Type a message" />
+              <button id="sendMessageBtn" class="msg_send_btn" type="button">
+                <i class="fas fa-paper-plane"></i>
+              </button>
             </div>
           </div>
         </div>
-        <p class="text-center top_spac">
-          Design by
-          <a target="_blank" href="https://www.facebook.com/HealtheBeat/"
-            >Team HealthBeat</a
-          >
-        </p>
       </div>
+      <p class="text-center top_spac">
+        Design by
+        <a target="_blank" href="https://www.facebook.com/HealtheBeat/">Team HealthBeat</a>
+      </p>
     </div>
-    <script src="js/chat.js"></script>
-  </body>
+  </div>
+  <script src="js/chat.js"></script>
+</body>
+
 </html>

@@ -1,231 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-    />
-    <link
-      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-      rel="stylesheet"
-      id="bootstrap-css"
-    />
-    <link rel="stylesheet" type="text/css" href="css/tree.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="icons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./icons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./icons/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/site.webmanifest" />
-  </head>
 
-  <body style="background-image: url('pics/fonto.jpg')">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="tree.html"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <button id="logoutBtn" class="btn btn-danger">Logout</button>
-    <button
-      id="showModalSendMessage"
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target="#exampleModalCenter"
-    >
-      Send Message to Selected
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+  <link rel="stylesheet" type="text/css" href="css/tree.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+</head>
+
+<body style="background-image: url('pics/fonto.jpg')">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <button id="goToChatBtn" class="btn btn-primary">Go to Chat</button>
-    <button id="followersBtn" class="btn btn-primary">
-      Calculate Total Number Of Followers
-    </button>
-    <img
-      id="calculatingImg"
-      src="https://loading.io/spinners/rolling/lg.curve-bars-loading-indicator.gif"
-      alt="calculatingImg"
-      style="display: none;"
-      width="50px"
-    />
-    <h3 id="numberOfFollowers" style="display: inline;"></h3>
-    <div class="float-right">
-      <button
-        type="button"
-        class="btn btn-warning"
-        data-toggle="modal"
-        data-target="#exampleModal"
-      >
-        Reveal your ID
-      </button>
-    </div>
-    <br />
-    <div class="tree">
-      <ul>
-        <li id="usersLi">
-          <span class="StartParent"
-            ><a
-              id="loggedInUsernamee"
-              style="color:#000; text-decoration:none;"
-              data-toggle="collapse"
-              href="#Web"
-              aria-expanded="true"
-              aria-controls="Web"
-            >
-              <i class="collapsed">
-                <i class="fas fa-folder eikonidio"> </i>
-              </i>
-              <i class="expanded"
-                ><i class="far fa-folder-open eikonidio"> </i>
-              </i>
-            </a>
-            <p style="display: inline;"></p>
-          </span>
-          <div id="Web" class="collapse show" style="display: none;">
-            <ul class="ParentList"></ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="tree.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
       </ul>
     </div>
-    <div
-      class="modal fade"
-      id="exampleModalCenter"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <textarea
-              id="typedMessage"
-              rows="4"
-              cols="50"
-              width="100px"
-              placeholder="Type Your Message Here"
-            ></textarea>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-            <button id="sendMessageBtn" type="button" class="btn btn-primary">
-              Send Message
-            </button>
-          </div>
+  </nav>
+  <button id="logoutBtn" class="btn btn-danger">Logout</button>
+  <button id="showModalSendMessage" type="button" class="btn btn-primary" data-toggle="modal"
+    data-target="#exampleModalCenter">
+    Send Message to Selected
+  </button>
+  <button id="goToChatBtn" class="btn btn-primary">Go to Chat</button>
+  <button id="followersBtn" class="btn btn-primary">
+    Calculate Total Number Of Followers
+  </button>
+  <img id="calculatingImg" src="https://loading.io/spinners/rolling/lg.curve-bars-loading-indicator.gif"
+    alt="calculatingImg" style="display: none;" width="50px" />
+  <h3 id="numberOfFollowers" style="display: inline;"></h3>
+  <div class="float-right">
+    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+      Reveal your ID
+    </button>
+  </div>
+  <br />
+  <div class="tree">
+    <ul>
+      <li id="usersLi">
+        <span class="StartParent"><a id="loggedInUsernamee" style="color:#000; text-decoration:none;"
+            data-toggle="collapse" href="#Web" aria-expanded="true" aria-controls="Web">
+            <i class="collapsed">
+              <i class="fas fa-folder eikonidio"> </i>
+            </i>
+            <i class="expanded"><i class="far fa-folder-open eikonidio"> </i>
+            </i>
+          </a>
+          <p style="display: inline;"></p>
+        </span>
+        <div id="Web" class="collapse show" style="display: none;">
+          <ul class="ParentList"></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <textarea id="typedMessage" rows="4" cols="50" width="100px" placeholder="Type Your Message Here"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button id="sendMessageBtn" type="button" class="btn btn-primary">
+            Send Message
+          </button>
         </div>
       </div>
     </div>
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              Give your Id to another Person in order to register Under your
-              tree
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p id="modalUsersId"></p>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Give your Id to another Person in order to register Under your
+            tree
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="modalUsersId"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
         </div>
       </div>
     </div>
-    <script src="./js/tree.js"></script>
-  </body>
+  </div>
+  <script src="./js/tree.js"></script>
+</body>
+
 </html>

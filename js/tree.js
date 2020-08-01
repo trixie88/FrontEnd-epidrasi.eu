@@ -8,7 +8,7 @@ let logoutBtn = document.getElementById("logoutBtn");
 let sendMessageBtn = document.getElementById("sendMessageBtn");
 let followersBtn = document.getElementById("followersBtn");
 let calculatingImg = document.getElementById("calculatingImg");
-goToChatBtn.addEventListener("click", function() {
+goToChatBtn.addEventListener("click", function () {
   window.location.href = "chat.html";
 });
 if (localStorage.getItem("credentials") === null) {
@@ -34,48 +34,48 @@ if (localStorage.getItem("credentials") === null) {
             </i>  ${loggedInUsername} `;
   }
 }
-followersBtn.addEventListener("click", function() {
+followersBtn.addEventListener("click", function () {
   followersBtn.style.display = "none";
   calculatingImg.style.display = "inline";
-  setTimeout(function() {
+  setTimeout(function () {
     $.ajax({
       url: "https://rest.epidrasi.eu/get/getNumberOfChildren/" + usersId,
       type: "POST",
       dataType: "text",
       async: true,
-      success: function(data) {
+      success: function (data) {
         let numberOfFollowers = document.getElementById("numberOfFollowers");
         calculatingImg.style.display = "none";
         numberOfFollowers.innerText = data + " Followers";
       },
-      error: function() {
+      error: function () {
         alert("errorr");
       }
     });
   }, 0);
 });
-logoutBtn.addEventListener("click", function() {
+logoutBtn.addEventListener("click", function () {
   $.ajax({
     url: "https://rest.epidrasi.eu/logout/" + tokenAlphanumeric,
     type: "POST",
     async: true,
-    success: function() {
+    success: function () {
       deleteCredentialsFromLocalStorage();
       window.location.href = "login1.html";
     },
-    error: function() {
+    error: function () {
       alert("errorr");
     }
   });
 });
-showModalSendMessageBtn.addEventListener("click", function() {
+showModalSendMessageBtn.addEventListener("click", function () {
   checkedUsersList = [...document.querySelectorAll(".checkedForMessage")]; //etsi kanw to nodeList array se ES6
 });
-sendMessageBtn.addEventListener("click", function() {
+sendMessageBtn.addEventListener("click", function () {
   let typedMessage = document.getElementById("typedMessage").value;
   let senderId = usersId;
   let messagesArray = [];
-  checkedUsersList.forEach(function(checkBox) {
+  checkedUsersList.forEach(function (checkBox) {
     if (checkBox.checked == true) {
       let receiverID = checkBox.value;
       let messageFromFrontEnd = {
@@ -113,7 +113,7 @@ function deleteCredentialsFromLocalStorage() {
 }
 let tree = document.querySelector(".tree");
 let count = 1;
-tree.addEventListener("click", function(e) {
+tree.addEventListener("click", function (e) {
   if (e.target.classList.contains("eikonidio")) {
     let diakoptis =
       e.target.parentElement.parentElement.parentElement.nextElementSibling;
@@ -132,9 +132,8 @@ tree.addEventListener("click", function(e) {
           "/" +
           tokenAlphanumeric,
         dataType: "json",
-        // data:tokenAlphanumeric,
         async: true,
-        success: function(data) {
+        success: function (data) {
           for (i = 0; i < data.length; i++) {
             let li = document.createElement("li");
             li.setAttribute("parentID", data[i].id);
@@ -150,8 +149,8 @@ tree.addEventListener("click", function(e) {
                                 </i> ${data[i].username}
                              </a>
                              <input class="checkedForMessage" type="checkbox"  value="${
-                               data[i].id
-                             }">
+              data[i].id
+              }">
                               <i class="fas fa-envelope"></i>
                             </span>
                                 <div id="page+${count}" class="collapse show" style="display:none;">
@@ -159,43 +158,11 @@ tree.addEventListener("click", function(e) {
                                 </ul>
                                </div>
                             `;
-            // let span = document.createElement("span");
-            // span.className = "parent";
-            // let aElement = document.createElement("a");
-            // aElement.setAttribute("style", "color:#000; text-decoration:none;");
-            // aElement.setAttribute("data-toggle", "collapse");
-            // aElement.setAttribute("href", "#!");
-            // aElement.setAttribute("aria-expanded", "false");
-            // aElement.setAttribute("aria-controls", "page1");
-            // aElement.innerText = data[i].username;
-            // let iCollapsed = document.createElement("i");
-            // iCollapsed.className = "collapsed";
-            // let iFaSFaFolder = document.createElement("i");
-            // iFaSFaFolder.className = "fas fa-folder eikonidio";
-            // let iExpanded = document.createElement("i");
-            // iExpanded.className = "expanded";
-            // let iFarFaFolder = document.createElement("i");
-            // iFarFaFolder.className = "far fa-folder-open eikonidio";
-            // iExpanded.appendChild(iFarFaFolder);
-            // iCollapsed.appendChild(iFaSFaFolder);
-            // aElement.appendChild(iCollapsed);
-            // aElement.appendChild(iExpanded);
-            // span.appendChild(aElement);
-            // let ulList = document.createElement("ul");
-            // ulList.className = "ParentList";
-            // // ulList.appendChild(divCollapsed);
-            // let divCollapsed = document.createElement("div");
-            // divCollapsed.id = "page" + count;
-            // divCollapsed.className = "collapse show";
-            // divCollapsed.style.display = "none";
-            // divCollapsed.appendChild(ulList);
-            // li.appendChild(span);
-            // li.appendChild(divCollapsed);
             parentUlList.appendChild(li);
             count = count + 1;
           }
         },
-        error: function() {
+        error: function () {
           alert("errorr");
         }
       });
